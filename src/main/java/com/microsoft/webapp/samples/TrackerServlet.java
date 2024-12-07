@@ -85,7 +85,7 @@ public class TrackerServlet extends HttpServlet {
         LOG.info("=============================================");
 
         out.println("<hr>");
-        out.println("Number of Visits = <font size='14'>" + pageVisits.getValue()
+        out.println("Number of Visit = <font size='14'>" + pageVisits.getValue()
                 + "</font><br>");
         out.println("Session ID = " + session.getId() + "<br>");
         out.println("Session Creation Time = " + new Date(session.getCreationTime()) + "<br>");
