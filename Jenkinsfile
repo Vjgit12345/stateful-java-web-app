@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git url: 'https://github.com/Vjgit12345/stateful-java-web-app.git', branch: 'master'
             }
         }
         stage('Build') {
@@ -13,10 +13,11 @@ pipeline {
         }
         stage('Deploy to Tomcat') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'Tomcat', 
-                                          path: '', 
-                                          url: 'http://3.108.215.219:8001/')], 
-                       contextPath: 'Stateful-Tracker/', 
+                deploy adapters: [tomcat9(
+                                    credentialsId: 'Tomcat', 
+                                    path: '', 
+                                    url: 'http://3.108.215.219:8001/manager/text')], 
+                       contextPath: '/Stateful-Tracker', 
                        war: '**/target/*.war'
             }
         }
