@@ -16,7 +16,7 @@ pipeline {
                 deploy adapters: [tomcat9(
                                     credentialsId: 'Tomcat', 
                                     path: '', 
-                                    url: 'http://15.207.248.215:8001/manager/text')], 
+                                    url: 'http://13.201.74.114:8001/manager/text')], 
                        contextPath: '/Stateful-Tracker', 
                        war: '**/target/*.war'
             }
